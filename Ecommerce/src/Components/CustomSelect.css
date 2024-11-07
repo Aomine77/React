@@ -1,0 +1,119 @@
+.custom-select {
+  position: relative;
+  width: 200px;
+}
+
+.select-button {
+  width: 100%;
+  padding: 12px 16px;
+  background: white;
+  border: 1px solid var(--accent-secondary);
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+}
+
+.select-button:hover {
+  border-color: var(--accent-primary);
+  background: var(--accent-secondary);
+}
+
+.custom-select.open .select-button {
+  border-color: var(--accent-primary);
+  border-radius: 8px 8px 0 0;
+}
+
+.select-value {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.select-value i {
+  color: var(--accent-primary);
+  font-size: 1rem;
+}
+
+.fa-chevron-down {
+  transition: transform 0.2s ease;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.custom-select.open .fa-chevron-down {
+  transform: rotate(180deg);
+}
+
+.select-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid var(--accent-primary);
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 100;
+  animation: slideDown 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.select-option {
+  padding: 12px 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.select-option i {
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+
+.select-option:hover {
+  background: var(--accent-secondary);
+}
+
+.select-option.selected {
+  background: var(--accent-secondary);
+  color: var(--accent-primary);
+  font-weight: 500;
+}
+
+.select-option.selected i {
+  color: var(--accent-primary);
+}
+
+/* Scrollbar Styling */
+.select-dropdown::-webkit-scrollbar {
+  width: 6px;
+}
+
+.select-dropdown::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.select-dropdown::-webkit-scrollbar-thumb {
+  background-color: var(--accent-secondary);
+  border-radius: 3px;
+} 
